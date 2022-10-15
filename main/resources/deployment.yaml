@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: springboot-hello-pod2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: springboot-hello-pod2
+  template:
+    metadata:
+      labels:
+        app: springboot-hello-pod2
+    spec:
+      containers:
+        - name: springboot-dockerimage-hello
+          image: springboot-dockerimage-hello:1.0
+          ports:
+            - containerPort: 8080

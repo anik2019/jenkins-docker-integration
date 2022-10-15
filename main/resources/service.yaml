@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    name: springboot-hello-pod2
+  name: springboot-hello-pod2
+spec:
+  selector:
+    app: springboot-hello-pod2
+  type: NodePort
+  ports:
+   -  nodePort: 30163
+      protocol: TCP
+      port: 8080
+      targetPort: 8080
